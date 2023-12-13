@@ -1,0 +1,11 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+parameters:
+    paths:
+        - app
+        - database
+        - resources
+    level: 5
+    ignoreErrors:
+    excludePaths:
+    checkGenericClassInNonGenericObjectType: false

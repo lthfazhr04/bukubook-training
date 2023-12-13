@@ -14,8 +14,12 @@ class BookController extends Controller
     public function getDatatable()
     {
         // kodingan datatable
+        $suhu = rand(1, 10);
+        if ($suhu > 3) {
+            $this->summary();
+        }
         return response()->json([
-            'key' => 'value'
+            'key' => $this->summary()
         ]);
     }
 
@@ -65,7 +69,7 @@ class BookController extends Controller
             $book = Book::create($formData);
 
             //UNTUK MERELASIKAN KATEGORI
-            $book->categories()->attach($formData['category']);
+            // $book->categories()->attach($formData['category']);
 
             return redirect()
                     ->route('book.index')
